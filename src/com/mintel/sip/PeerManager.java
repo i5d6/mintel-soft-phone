@@ -1,7 +1,6 @@
 package com.mintel.sip;
 import java.net.InetAddress;
 import java.net.SocketException;
-import java.net.UnknownHostException;
 import android.app.Activity;
 
 import android.preference.PreferenceManager;
@@ -55,9 +54,9 @@ public class PeerManager  implements SipListener{
     	 SharedPreferences sharedPrefs = PreferenceManager
   				.getDefaultSharedPreferences(mContext);
     	 config = new JavaConfig();
-    	 config.setUserPart(sharedPrefs.getString("prefUsername", "1001"));
-    	 config.setPassword(sharedPrefs.getString("prefPassword", "1234"));
-    	 config.setDomain(sharedPrefs.getString("prefServerIp", "192.168.137.1"));
+    	 config.setUserPart(sharedPrefs.getString("prefUsername", "null"));
+    	 config.setPassword(sharedPrefs.getString("prefPassword", "null"));
+    	 config.setDomain(sharedPrefs.getString("prefServerIp", "null"));
     	 config.setMediaMode(MediaMode.captureAndPlayback);
     	 try {
  			localIp = InetAddress.getByName(IpUtils.getIPAddress(true));
